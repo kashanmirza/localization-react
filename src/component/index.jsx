@@ -32,32 +32,39 @@ class localization extends Component {
                 type="radio"
                 onChange={(e) => this.onLanguageHandle(e)}
             />
+            <input
+                name="language"
+                value="ur"
+                checked={this.state.value === 'ur'}
+                type="radio"
+                onChange={(e) => this.onLanguageHandle(e)}
+            />
         </div>)
     }
 
     render() {
-        const {t} = this.props    
-        
+        const { t } = this.props
+
         return (
-        <div className="App">
-             {this.renderRadioButtons()}
-         <h1><Trans>Paragraph</Trans></h1>
-          <table>
-            <tbody>
-                 <tr>
-                    <td style={{width: '20%'}}>{t('author.title')}</td>
-                    <td style={{width: '5%'}}>:</td>
-                    <td style={{width: '75%'}}>{t('author.value')}</td>
-                 </tr>
-                  <tr>
-                     <td style={{width: '20%'}}>{t('description.title')}</td>
-                     <td style={{width: '5%'}}>:</td>
-                     <td style={{width: '75%'}}>{t('description.value')}</td>
-                  </tr>
-             </tbody>
-          </table>
-        </div>
-      );
+            <div className="App">
+                {this.renderRadioButtons()}
+                <h1><Trans>{t('paragraph')}</Trans></h1>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style={{ width: '20%' }}>{t('author.title')}</td>
+                            <td style={{ width: '5%' }}>:</td>
+                            <td style={{ width: '75%' }}>{t('author.value')}</td>
+                        </tr>
+                        <tr>
+                            <td style={{ width: '20%' }}>{t('description.title')}</td>
+                            <td style={{ width: '5%' }}>:</td>
+                            <td style={{ width: '75%' }}>{t('description.value')}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        );
     }
 }
 
